@@ -11,25 +11,7 @@ screen = pygame.display.set_mode((600, 600))
 pygame.display.set_caption("Angry smile")
 screen.fill((217, 217, 217))
 
-# Draw Face
-pygame.draw.circle(screen, (249, 249, 6), center=(300, 300), radius=150)
-pygame.draw.circle(screen, (0, 0, 0), center=(300, 300), radius=150, width=2)
 
-# Draw eyes
-
-# Left eye
-pygame.draw.circle(screen, (255, 0, 0), center=(230, 270), radius=32)
-pygame.draw.circle(screen, (0, 0, 0), center=(230, 270), radius=32, width=2)
-pygame.draw.circle(screen, (0, 0, 0), center=(230, 270), radius=13)
-# Right eye
-pygame.draw.circle(screen, (255, 0, 0), center=(370, 270), radius=25)
-pygame.draw.circle(screen, (0, 0, 0), center=(370, 270), radius=25, width=2)
-pygame.draw.circle(screen, (0, 0, 0), center=(370, 270), radius=13)
-
-
-# Draw eyebrow
-# Left eyebrow
-# Calkulate left brow coordinate
 def curve_rect(start_position, length, height, angle=0):
     """
     Calculate rectangle coordinates concerning angle
@@ -53,10 +35,34 @@ def curve_rect(start_position, length, height, angle=0):
     return dots
 
 
-right_brow = curve_rect(start_position=(150, 230), length=150, height=10, angle=30)
-pygame.draw.polygon(screen, (0, 0, 0), right_brow)
-# Right brow
+# Draw Face
+pygame.draw.circle(screen, (249, 249, 6), center=(300, 300), radius=150)
+pygame.draw.circle(screen, (0, 0, 0), center=(300, 300), radius=150, width=2)
 
+# Draw eyes
+
+# Left eye
+pygame.draw.circle(screen, (255, 0, 0), center=(230, 270), radius=32)
+pygame.draw.circle(screen, (0, 0, 0), center=(230, 270), radius=32, width=2)
+pygame.draw.circle(screen, (0, 0, 0), center=(230, 270), radius=13)
+# Right eye
+pygame.draw.circle(screen, (255, 0, 0), center=(370, 270), radius=25)
+pygame.draw.circle(screen, (0, 0, 0), center=(370, 270), radius=25, width=2)
+pygame.draw.circle(screen, (0, 0, 0), center=(370, 270), radius=13)
+
+# Draw eyebrow
+# Left eyebrow
+# Calkulate left brow coordinate
+left_brow = curve_rect(start_position=(150, 172), length=144, height=15, angle=30)
+pygame.draw.polygon(screen, (0, 0, 0), left_brow)
+
+# Right brow
+# Calkulate right brow coordinate
+right_brow = curve_rect(start_position=(320, 250), length=140, height=15, angle=-23)
+pygame.draw.polygon(screen, (0, 0, 0), right_brow)
+
+# Draw mouth
+pygame.draw.rect(screen, (0, 0, 0), (225, 375, 150, 30))
 
 pygame.display.update()
 
