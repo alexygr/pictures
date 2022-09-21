@@ -3,7 +3,7 @@ import time
 
 import pygame
 
-SCREEN_HEIGHT = 710
+SCREEN_HEIGHT = 610
 SCREEN_WIGHT = 610
 SCREEN_HEIGHT_MIDDLE = SCREEN_HEIGHT / 2
 SCREEN_WIGHT_MIDDLE = SCREEN_WIGHT / 2
@@ -40,10 +40,10 @@ def get_end_pos(tm_sec, length, s=0):
 
 
 def draw_clock_face():
-    pygame.draw.ellipse(screen, WHITE, (MARGIN, MARGIN, SCREEN_WIGHT - MARGIN*2, SCREEN_HEIGHT - MARGIN*2), width=1)
+    pygame.draw.ellipse(screen, WHITE, (MARGIN, MARGIN, SCREEN_WIGHT - MARGIN*2, SCREEN_HEIGHT - MARGIN*2), width=3)
     for sec in range(60):
         if sec % 5 == 0:
-            pygame.draw.aaline(screen, WHITE, start_pos=get_end_pos(sec, S * 1.02), end_pos=get_end_pos(sec, 1))
+            pygame.draw.line(screen, WHITE, start_pos=get_end_pos(sec, S * 1.02), end_pos=get_end_pos(sec, 1), width=3)
         else:
             pygame.draw.aaline(screen, WHITE, start_pos=get_end_pos(sec, S * 1.05),
                                end_pos=get_end_pos(sec, 1))
