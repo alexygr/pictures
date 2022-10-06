@@ -1,8 +1,8 @@
 import pygame
 
-WIGHT = 600
+WIDTH = 600
 HEIGHT = 600
-SCREEN = (WIGHT, HEIGHT)
+SCREEN = (WIDTH, HEIGHT)
 FPS = 60
 
 pygame.init()
@@ -31,7 +31,7 @@ def move_right(rect: pygame.Rect, s: int):
     return rect
 
 
-c = pygame.draw.circle(screen, "forestgreen", (WIGHT / 2, HEIGHT / 2), 10)
+c = pygame.draw.circle(screen, "forestgreen", (WIDTH / 2, HEIGHT / 2), 10)
 
 running = True
 speed = 1
