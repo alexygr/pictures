@@ -30,11 +30,12 @@ running = True
 
 
 def get_end_pos(tm_sec, length, s=0):
-    angle = (S_ANGLE * tm_sec - 90) + (s * M_ANGLE)
+    angle = (S_ANGLE * tm_sec) + (s * M_ANGLE)
     x_length = (SCREEN_WIGHT_MIDDLE - MARGIN) * length
     y_length = (SCREEN_HEIGHT_MIDDLE - MARGIN) * length
-    x = math.cos(math.radians(angle)) * x_length + SCREEN_WIGHT_MIDDLE
-    y = math.sin(math.radians(angle)) * y_length + SCREEN_HEIGHT_MIDDLE
+    x = math.sin(math.radians(angle)) * y_length + SCREEN_HEIGHT_MIDDLE
+    y = -math.cos(math.radians(angle)) * x_length + SCREEN_WIGHT_MIDDLE
+
     return x, y
 
 
